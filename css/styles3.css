@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    background: url("https://img.freepik.com/free-photo/flat-lay-frame-with-delicious-thanksgiving-food_23-2148306295.jpg?w=1480&t=st=1673836241~exp=1673836841~hmac=f1ab814b191b7842c41d38ce40889fbd9743d29124ac36d82995cdfd3b8a0458");
+    background-size: cover;
+    backdrop-filter: blur(3px);
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+/* Nav */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 8vh;
+    background-color: rgba(255, 162, 79, 0.6);
+    font-family: 'Poppins', sans-serif;
+    z-index: 1;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.nav-links li{
+    margin-left: 2em;
+    margin-right: 2em;
+    list-style: none;
+    
+
+}
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links li a:hover {
+  border-bottom: 1px solid rgb(250, 246, 230);
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: yellow;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Countdown container */
+#countDownBackground {
+    background-color: rgba(244, 41, 22, 0.6);
+    width: 75%;
+    height: 40%;
+    position: fixed;
+    top: 35%;
+    z-index: -1;
+    margin: auto auto;
+    border-radius: 4em;
+}
+
+.h1-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: normal;
+    font-size: 2rem;
+    margin: auto auto;
+    color: white;
+}
+
+
+.countdown-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+.big-text {
+    font-weight: bold;
+    font-size: 6rem;
+    line-height: 1;
+    margin: 1rem 2rem;
+    color: white;
+}
+
+.countdown-el {
+    text-align: center;
+    color: white;
+}
+
+.countdown-el span {
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width: 1024px){
+    h1 {
+        font-size: 1.5em;
+    }
+    .big-text {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 768px){
+    h1 {
+        font-size: 3rem;
+    }
+
+    .big-text {
+        font-size: 3rem;
+    }
+    #countDownBackground {
+        top: 35%;
+    }
+    .nav-links li a {
+        font-size: .9em;
+    }
+}
+@media screen and (max-width: 425px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .countdown-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .big-text {
+        font-size: 4.5rem;
+        margin-bottom: -.2em;
+    }
+
+    #countDownBackground {
+        height: 60%;
+        width: 90%;
+        top: 22%;
+    }
+
+    .burger {
+        display: block;
+    }
+    
+    
+    .nav-links {
+        position: absolute;
+        height: 50vh;
+        top: -310px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        transition: transform 0.6s ease-out;
+        background-color: rgba(121, 57, 59, 0.7);
+    }
+    .nav-links li {
+        padding-top: 1em;
+        margin-bottom: .6em;
+        cursor: pointer;
+        opacity: 0;
+    }
+
+    .nav-links li a {
+        color: white;
+    }
+    .nav-links li a:hover {
+        border-bottom: 1px solid black;
+    }
+
+    .nav-active {
+        transform: translateY(370px);
+    } 
+
+    /* link animation */
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateY(0px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+    /* burger animation */
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+    .big-text {
+        font-size: 3rem;
+        margin-bottom: -.2em;
+    }
+    .countdown-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    #countDownBackground {
+        height: 85%;
+        width: 80%;
+        top: 10%;
+    }
+    h1 {
+        font-size: .8em;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .nav-links {
+        width: 14em;
+    }
+    .nav-links li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .9rem;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+}
